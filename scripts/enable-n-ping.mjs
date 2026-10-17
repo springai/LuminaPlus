@@ -86,6 +86,11 @@ replaceOnce(
   "function ml(e){let{homepageMultiPingTaskIds:t,homepagePingLineOverrides:n}=F(),r=st(n,e),i=fl(e);return(0,I.useMemo)(()=>we(we(t,r),i),[t,i,r])}",
   "function ml(e){let{homepageMultiPingTaskIds:t,homepagePingLineOverrides:n}=F(),r=st(n,e),i=fl(e),a=sl(e),o=(0,I.useMemo)(()=>_l(a),[a]);return(0,I.useMemo)(()=>[...new Set([...we(we(t,r),i),...o])],[t,i,r,o])}",
 );
+replaceOnce(
+  "index-B21hM2jl.js",
+  "(0,L.jsx)(`span`,{children:`LuminaPlus`})",
+  "(0,L.jsx)(`a`,{className:`site-footer-link`,href:`https://github.com/springai/LuminaPlus/`,target:`_blank`,rel:`noopener noreferrer`,children:`LuminaPlus`})",
+);
 
 replaceOnce(
   "ThemeManage-QSTUzB0r.js",
