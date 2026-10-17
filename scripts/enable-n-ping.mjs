@@ -4,7 +4,13 @@ import path from "node:path";
 const root = process.cwd();
 const assets = path.join(root, "dist", "assets");
 
+function resolveAsset(file) {
+  const versioned = file.endsWith(".js") ? file.replace(/\.js$/, ".v102.js") : file;
+  return fs.existsSync(path.join(assets, versioned)) ? versioned : file;
+}
+
 function replaceOnce(file, from, to) {
+  file = resolveAsset(file);
   const filePath = path.join(assets, file);
   const source = fs.readFileSync(filePath, "utf8");
   if (source.includes(to)) return;
@@ -19,6 +25,7 @@ function replaceOnce(file, from, to) {
 }
 
 function replaceAll(file, from, to) {
+  file = resolveAsset(file);
   const filePath = path.join(assets, file);
   const source = fs.readFileSync(filePath, "utf8");
   if (!source.includes(from)) {
@@ -29,6 +36,7 @@ function replaceAll(file, from, to) {
 }
 
 function replaceAllOptional(file, from, to) {
+  file = resolveAsset(file);
   const filePath = path.join(assets, file);
   const source = fs.readFileSync(filePath, "utf8");
   if (source.includes(from)) fs.writeFileSync(filePath, source.split(from).join(to));
@@ -89,7 +97,7 @@ replaceOnce(
 replaceOnce(
   "index-B21hM2jl.js",
   "(0,L.jsx)(`span`,{children:`LuminaPlus`})",
-  "(0,L.jsx)(`a`,{className:`site-footer-link`,href:`https://github.com/springai/LuminaPlus/`,target:`_blank`,rel:`noopener noreferrer`,children:`LuminaPlus`})",
+  "(0,L.jsx)(`a`,{className:`site-footer-link`,href:`https://github.com/springai/LuminaPlus`,target:`_blank`,rel:`noopener noreferrer`,children:`LuminaPlus`})",
 );
 
 replaceOnce(
