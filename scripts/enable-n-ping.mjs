@@ -43,7 +43,7 @@ replaceOnce("Spinner-b_CiRbgc.js", "var Gr=[1,2,3]", "var Gr=[]");
 replaceOnce(
   "Spinner-b_CiRbgc.js",
   "Fe=new Map(N.map(e=>[e.id,e]));",
-  `Fe=new Map(N.map(e=>[e.id,e]));function syncPingTasks(){let e=[...new Set([...O,...(Array.isArray(A?.themeOptions?.homepageMultiPingTaskIds)?A.themeOptions.homepageMultiPingTaskIds:[]),...Object.keys(k).map(Number).filter(e=>Number.isSafeInteger(e)&&e>0)])].filter(e=>Number.isSafeInteger(e)&&e>0);if(e.length>0&&e.join()!==O.join())O=e;for(let e of O){if(Fe.has(e))continue;let t=e<=8?[\`ct\`,\`cu\`,\`cm\`,\`bd\`,\`node_1\`,\`node_2\`,\`node_3\`,\`node_4\`][e-1]:\`task_\${e}\`,n={id:e,key:t,name:k[e]||M[t]||\`线路 #\${e}\`,field:\`ping_\${t}\`,lossField:\`loss_\${t}\`};N.push(n);Fe.set(e,n);S.includes(t)||S.push(t);C[t]=\`lossTask\${e}\`;nt?.add?.(n.field);nt?.add?.(n.lossField)}if(Gr.length===0&&O.length>0)Gr.push(...O)}`,
+  `Fe=new Map(N.map(e=>[e.id,e]));function syncPingTasks(){let e=[...new Set([...O,...(Array.isArray(A?.themeOptions?.homepageMultiPingTaskIds)?A.themeOptions.homepageMultiPingTaskIds:[]),...Object.keys(k).map(Number).filter(e=>Number.isSafeInteger(e)&&e>0)])].filter(e=>Number.isSafeInteger(e)&&e>0);if(e.length>0&&e.join()!==O.join())O=e;for(let e of O){if(Fe.has(e))continue;let t=e<=8?[\`ct\`,\`cu\`,\`cm\`,\`bd\`,\`node_1\`,\`node_2\`,\`node_3\`,\`node_4\`][e-1]:\`task_\${e}\`,n={id:e,key:t,name:k[e]||M[t]||\`线路 #\${e}\`,field:\`ping_\${t}\`,lossField:\`loss_\${t}\`};N.push(n);Fe.set(e,n);S.includes(t)||S.push(t);C[t]=\`lossTask\${e}\`;nt?.add?.(n.field);nt?.add?.(n.lossField)}if(!Array.isArray(A?.themeOptions?.homepageMultiPingTaskIds)&&O.length>0&&(Gr.length!==O.length||Gr.some((e,t)=>e!==O[t]))){Gr.length=0;Gr.push(...O)}}`,
 );
 
 replaceOnce(
@@ -82,9 +82,9 @@ replaceOnce(
   "name:Te()[N.find(e=>e.id===n.taskId)?.key]||`线路 #${n.taskId}`",
 );
 replaceOnce(
-  "Spinner-b_CiRbgc.js",
-  "if(Gr.length===0&&O.length>0)Gr.push(...O)",
-  "if(!Array.isArray(A?.themeOptions?.homepageMultiPingTaskIds)&&O.length>0&&(Gr.length!==O.length||Gr.some((e,t)=>e!==O[t]))){Gr.length=0;Gr.push(...O)}",
+  "index-B21hM2jl.js",
+  "function ml(e){let{homepageMultiPingTaskIds:t,homepagePingLineOverrides:n}=F(),r=st(n,e),i=fl(e);return(0,I.useMemo)(()=>we(we(t,r),i),[t,i,r])}",
+  "function ml(e){let{homepageMultiPingTaskIds:t,homepagePingLineOverrides:n}=F(),r=st(n,e),i=fl(e),a=sl(e),o=(0,I.useMemo)(()=>_l(a),[a]);return(0,I.useMemo)(()=>[...new Set([...we(we(t,r),i),...o])],[t,i,r,o])}",
 );
 
 replaceOnce(
