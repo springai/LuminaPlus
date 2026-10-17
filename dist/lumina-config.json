@@ -7,7 +7,6 @@
     "desktopNodeViewMode": "large",
     "mobileNodeViewMode": "compact",
     "enableHomepageMultiPing": true,
-    "homepageMultiPingTaskIds": [1, 2, 3],
     "fakePingForUnbound": false,
     "showCostSummary": true,
     "showAssetRating": false
